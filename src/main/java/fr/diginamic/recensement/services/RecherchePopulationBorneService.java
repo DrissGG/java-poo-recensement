@@ -38,7 +38,7 @@ public class RecherchePopulationBorneService extends MenuService{
 		int min =0;
 		try {
 			min = Integer.parseInt(saisieMin) * 1000; 
-		} catch (Exception e) {
+		} catch (NumberFormatException e) {
 			throw new SaisiException("Attention min devrait etre un entier");
 		}
 				
@@ -47,6 +47,7 @@ public class RecherchePopulationBorneService extends MenuService{
 		if(!(min>0 || max>0)) {
 			throw new SaisiException("Attention min ou max devrait etre superieur a 0");
 		}
+		
 		
 		
 		
